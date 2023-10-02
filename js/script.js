@@ -1,12 +1,12 @@
-const startButton = document.getElementById("start-button");
-const quizContainer = document.querySelector(".quiz-container");
-const questionElement = document.getElementById("question");
-const choicesElement = document.getElementById("choices");
-const resultElement = document.getElementById("result");
-const finalScoreElement = document.getElementById("final-score");
-const initialsInput = document.getElementById("initials");
-const submitScoreButton = document.getElementById("submit-score");
-const timeElement = document.getElementById("time");
+const startButton = document.getElementById("start-button"); // a button for start quiz button;
+const quizContainer = document.querySelector(".quiz-container"); //container of h2 with is questions
+const questionElement = document.getElementById("question"); //h2 element question
+const choicesElement = document.getElementById("choices"); //inside of container which is div
+const resultElement = document.getElementById("result"); //inside of container result which is paragraph
+const finalScoreElement = document.getElementById("final-score"); //inside of container div which is score container that containe p and side of p there is span final score
+const initialsInput = document.getElementById("initials"); //this is the input
+const submitScoreButton = document.getElementById("submit-score"); //a button for submit score
+const timeElement = document.getElementById("time"); //time that count the result time
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -41,6 +41,15 @@ const questions = [
     ],
     correctAnswer: "C",
   },
+  {
+    question: "What is a closure in JavaScript?",
+    choices: [
+      "A. A way to protect your code from external access",
+      "B. A function inside another function that has access to the outer function's variables",
+      "C. A type of data storage in JavaScript",
+    ],
+    correctAnswer: "B",
+  },
 ];
 
 startButton.addEventListener("click", startQuiz);
@@ -60,7 +69,7 @@ function setTime() {
       endQuiz();
     }
     timeElement.textContent = "Time:" + time;
-  }, 1000);
+  }, 500);
 }
 
 function showQuestion(index) {
@@ -73,6 +82,7 @@ function showQuestion(index) {
       choiceButton.textContent = choice;
       choiceButton.addEventListener("click", function () {
         checkAnswer(choice.charAt(0), question.correctAnswer);
+        console.log(choice.charAt(0));
       });
       choicesElement.appendChild(choiceButton);
     });
