@@ -23,6 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 button {
@@ -42,9 +43,31 @@ button:hover {
 
 .score-container {
   display: none;
+  margin-bottom: 60px;
+}
+.high-score-container {
+  border-radius: 50px;
+  margin-bottom: 0px;
+  width: 300px;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 auto;
+  padding: 30px;
+  gap: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
 #time {
   position: absolute;
   top: 0;
   right: 19px;
+}
+#correct {
+  margin-bottom: 0px;
+  background-color: green;
+  display: none;
+}
+#wrong {
+  margin-bottom: 0px;
+  background-color: red;
+  display: none;
 }

@@ -7,6 +7,8 @@ const finalScoreElement = document.getElementById("final-score"); //inside of co
 const initialsInput = document.getElementById("initials"); //this is the input
 const submitScoreButton = document.getElementById("submit-score"); //a button for submit score
 const timeElement = document.getElementById("time"); //time that count the result time
+const correctElement = document.getElementById("correct");
+const wrongElement = document.getElementById("wrong");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -90,23 +92,32 @@ function showQuestion(index) {
     endQuiz();
   }
 }
-
 function checkAnswer(selectedChoice, correctAnswer) {
   if (selectedChoice === correctAnswer) {
     resultElement.textContent = "Correct!";
     score += 10;
+    correctElement.style.display = "block";
   } else {
+    wrongElement.style.display = "block";
     resultElement.textContent = "Wrong!";
     time -= 10;
     if (time < 0) {
       time = 0;
     }
   }
-  currentQuestionIndex++;
-  showQuestion(currentQuestionIndex);
+
+  // Use setTimeout to hide the messages after a short delay (e.g., 1000 milliseconds)
+  setTimeout(() => {
+    correctElement.style.display = "none";
+    wrongElement.style.display = "none";
+    currentQuestionIndex++;
+    showQuestion(currentQuestionIndex);
+  }, 1000); // Adjust the delay time as needed (1000 milliseconds = 1 second)
 }
 
 function endQuiz() {
+  correctElement.style.display = "none";
+  wrongElement.style.display = "none";
   clearInterval(timerInterval);
   quizContainer.style.display = "none";
   resultElement.textContent = "";
