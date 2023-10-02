@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Quiz App</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Code Quiz Challenge</h1>
+      <p>Try to answer the following questions within the time limit.</p>
+      <p>Incorrect answers will subtract 10 seconds from your time.</p>
+      <button id="start-button">Start Quiz</button>
+    </div>
+
+    <div class="quiz-container">
+      <h2 id="question">Question goes here</h2>
+      <div id="choices" class="choices"></div>
+    </div>
+
+    <div class="result-container">
+      <p id="result"></p>
+    </div>
+
+    <div class="score-container">
+      <p>Final Score: <span id="final-score"></span></p>
+      <input type="text" id="initials" placeholder="Enter Initials" />
+      <button id="submit-score">Submit Score</button>
+    </div>
+    <div class="high-score-container">
+      <h2>High Scores</h2>
+      <h3><span id="time">Time:</span></h3>
+      <ul id="high-score-list">
+        <!-- High scores will be dynamically added here -->
+      </ul>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
