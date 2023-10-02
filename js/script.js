@@ -105,14 +105,12 @@ function checkAnswer(selectedChoice, correctAnswer) {
       time = 0;
     }
   }
-
-  // Use setTimeout to hide the messages after a short delay (e.g., 1000 milliseconds)
   setTimeout(() => {
     correctElement.style.display = "none";
     wrongElement.style.display = "none";
     currentQuestionIndex++;
     showQuestion(currentQuestionIndex);
-  }, 1000); // Adjust the delay time as needed (1000 milliseconds = 1 second)
+  }, 300); // Adjust the delay time as needed (1000 milliseconds = 1 second)
 }
 
 function endQuiz() {
