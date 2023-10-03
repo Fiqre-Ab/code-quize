@@ -43,8 +43,9 @@ You can view the high scores achieved by other participants by clicking on the "
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ---
 
-© 2023 Your Name
+© 2023 fiqre
+[![DEPLOY](https://img.shields.io/badge/DEPLOY-%E2%9C%93-brightgreen)](https://fiqre-ab.github.io/code-quize/)
