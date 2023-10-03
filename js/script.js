@@ -54,6 +54,15 @@ const questions = [
     ],
     correctAnswer: "B",
   },
+  {
+    question: "What is the DOM in web development?",
+    choices: [
+      "A. Document Object Model",
+      "B. Digital Online Marketing",
+      "C. Data Object Model",
+    ],
+    correctAnswer: "A",
+  },
 ];
 
 startButton.addEventListener("click", startQuiz);
