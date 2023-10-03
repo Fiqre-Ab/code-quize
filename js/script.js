@@ -6,9 +6,11 @@ const resultElement = document.getElementById("result"); //inside of container r
 const finalScoreElement = document.getElementById("final-score"); //inside of container div which is score container that containe p and side of p there is span final score
 const initialsInput = document.getElementById("initials"); //this is the input
 const submitScoreButton = document.getElementById("submit-score"); //a button for submit score
+const goBack = document.getElementById("go-back");
 const timeElement = document.getElementById("time"); //time that count the result time
 const correctElement = document.getElementById("correct");
 const wrongElement = document.getElementById("wrong");
+const highScoreContainer = document.querySelector(".high-score-container");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -56,7 +58,7 @@ const questions = [
 
 startButton.addEventListener("click", startQuiz);
 submitScoreButton.addEventListener("click", saveScore);
-
+goBack.addEventListener("click", goBackToStart);
 function startQuiz() {
   startButton.style.display = "none";
   quizContainer.style.display = "block";
@@ -66,11 +68,12 @@ function startQuiz() {
 
 function setTime() {
   timerInterval = setInterval(function () {
-    time--;
     if (time <= 0) {
       endQuiz();
+    } else {
+      time--;
+      timeElement.textContent = "Time:" + time;
     }
-    timeElement.textContent = "Time:" + time;
   }, 500);
 }
 
@@ -123,6 +126,7 @@ function endQuiz() {
   initialsInput.value = "";
   document.querySelector(".result-container").style.display = "block";
   document.querySelector(".score-container").style.display = "block";
+  // Call displayHighScores() to display high scores when needed
 }
 
 function saveScore() {
@@ -131,6 +135,9 @@ function saveScore() {
     const currentDate = new Date().toLocaleDateString();
     saveHighScore(initials, score, currentDate);
     alert("Score saved!");
+    // Display the high scores container
+    highScoreContainer.style.display = "block";
+    displayHighScores();
   }
 }
 
@@ -161,12 +168,37 @@ function displayHighScores() {
   highScoreList.innerHTML = "";
   highScores.forEach(function (entry, index) {
     const listItem = document.createElement("li");
-    listItem.textContent = `${index + 1}. ${entry.initials} - ${
-      entry.score
-    } - ${entry.date}`;
+    listItem.textContent =
+      index +
+      1 +
+      ". " +
+      entry.initials +
+      " - " +
+      entry.score +
+      " - " +
+      entry.date;
     highScoreList.appendChild(listItem);
   });
 }
+function goBackToStart() {
+  // Reset quiz state
+  currentQuestionIndex = 0;
+  score = 0;
+  time = 60;
+  clearInterval(timerInterval);
 
-// Call displayHighScores() to display high scores when needed
-displayHighScores();
+  // Hide result and high score containers
+  document.querySelector(".result-container").style.display = "none";
+  document.querySelector(".score-container").style.display = "none";
+  highScoreContainer.style.display = "none";
+
+  // Clear the initials input value
+  initialsInput.value = "";
+
+  // Display the start button and hide the quiz container
+  startButton.style.display = "block";
+  quizContainer.style.display = "none";
+
+  // Reset the time display
+  timeElement.textContent = "Time: " + time;
+}

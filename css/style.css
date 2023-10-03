@@ -1,31 +1,36 @@
+/* Set global styles for the entire page */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: aliceblue;
+  background-color: aliceblue; /*background color for the entire page */
   margin: 0;
   padding: 0;
-  text-align: center;
+  text-align: center; /* Center-align text within the body */
 }
-
+/* Define styles for the main content container */
 .container {
-  background-color: #fff;
+  background-color: #fff; /* background color for the container */
   padding: 20px;
-  border-radius: 10px;
-  margin: 20px auto;
+  border-radius: 10px; /*rounded corners to the container */
+  margin: 40px auto;
   width: 80%;
-  max-width: 600px;
+  max-width: 600px; /* maximum width for the container */
 }
 
+/* Hide the quiz container by default */
 .quiz-container {
   display: none;
 }
 
+/* Style the choices container for quiz questions */
 .choices {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
 }
-
+#start-button {
+  margin: 0 auto;
+}
 button {
   margin: 10px;
   padding: 10px 20px;
@@ -37,35 +42,67 @@ button:hover {
   background-color: aliceblue;
 }
 
+/* Hide the result container by default */
 .result-container {
   display: none;
 }
 
+/* Hide the score container by default */
 .score-container {
   display: none;
   margin-bottom: 60px;
 }
+
 .high-score-container {
+  display: none; /* Hide the high score container by default.this will appear in js after i submit the score */
   border-radius: 50px;
   margin-bottom: 0px;
   width: 300px;
   height: auto;
-  background-color: rgba(255, 255, 255, 0.5);
-  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.8); /* the background color */
+  margin: 0 auto; /* Center the container horizontally */
   padding: 30px;
   gap: 10px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  color: white; /*  text color to white */
+  text-align: center; /* Center-align text */
 }
+
+/* Style the heading within .high-score-container */
+.high-score-container h2 {
+  font-size: 24px; /*  font size */
+  margin-bottom: 20px; /* Add some spacing below the heading */
+}
+
+/* Style the list of high scores */
+.high-score-container ul {
+  list-style: none; /* Remove list bullets */
+  padding: 0; /* Remove default padding */
+}
+
+/* Style the list items within the high-score list */
+.high-score-container li {
+  font-size: 18px; /* font size for high scores */
+  margin-bottom: 10px; /* spacing between high scores */
+}
+
+/* Style the time element within .high-score-container */
+.high-score-container #time {
+  font-size: 20px; /* font size for time display */
+}
+/*time  count*/
 #time {
   position: absolute;
   top: 0;
   right: 19px;
 }
+/*if it's correct green color display none */
 #correct {
   margin-bottom: 0px;
   background-color: green;
   display: none;
 }
+/*if it's wrong red color display none*/
 #wrong {
   margin-bottom: 0px;
   background-color: red;
