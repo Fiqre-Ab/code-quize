@@ -47,5 +47,6 @@ This project is licensed under the MIT License.
 
 ---
 
-© 2023 fiqre
+© 2023 FIQRE
+
 [![DEPLOY](https://img.shields.io/badge/DEPLOY-%E2%9C%93-brightgreen)](https://fiqre-ab.github.io/code-quize/)
