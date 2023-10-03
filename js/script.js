@@ -138,6 +138,9 @@ function saveScore() {
     // Display the high scores container
     highScoreContainer.style.display = "block";
     displayHighScores();
+  } else {
+    // If initials are empty, show an alert message or handle it in your preferred way
+    alert("Please enter your initials.");
   }
 }
 
@@ -200,5 +203,5 @@ function goBackToStart() {
   quizContainer.style.display = "none";
 
   // Reset the time display
-  timeElement.textContent = "Time: " + time;
+  timeElement.textContent = "Time:";
 }

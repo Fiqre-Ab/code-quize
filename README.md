@@ -1,6 +1,6 @@
 # Code Quiz
 
-![Quiz Demo]()
+![Quiz Demo](./image/Screenshot%202023-10-02%20213351.png)
 
 ## Table of Contents
 
